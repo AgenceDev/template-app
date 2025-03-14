@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Template App Next.js
 
-## Getting Started
+Un template complet pour démarrer rapidement des applications web modernes avec Next.js 15, React 19, Convex et Clerk.
 
-First, run the development server:
+## 🚀 Technologies intégrées
+
+Cette application intègre les technologies suivantes :
+
+- **[Next.js 15](https://nextjs.org/)** - Framework React avec rendu hybride
+- **[React 19](https://react.dev/)** - Bibliothèque UI avec les dernières fonctionnalités
+- **[Convex](https://www.convex.dev/)** - Base de données en temps réel
+- **[Clerk](https://clerk.com/)** - Authentification complète
+- **[TailwindCSS](https://tailwindcss.com/)** - Framework CSS utilitaire
+- **[Next-themes](https://github.com/pacocoursey/next-themes)** - Gestion du thème clair/sombre
+- **[Cypress](https://www.cypress.io/)** - Tests end-to-end
+
+## 🛠️ Installation
+
+### 1. Initialisation du projet
+
+Pour initialiser le projet avec votre propre nom d'application :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Rendre le script d'initialisation exécutable
+chmod +x ./scripts/init-project.sh
+
+# Exécuter le script d'initialisation
+./scripts/init-project.sh
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Alternativement, vous pouvez utiliser la commande npm :
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run init
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ce script vous demandera un nom pour votre projet, mettra à jour le [package.json](package.json) et installera les dépendances.
 
-## Learn More
+### 2. Configuration de l'environnement
 
-To learn more about Next.js, take a look at the following resources:
+Créez un fichier **.env** à la racine du projet avec les variables d'environnement requises, exemple dans **[env.exemple](env.exemple)** :
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+CYPRESS_RECORD_KEY=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Required for sending
+QSTASH_URL=
+QSTASH_TOKEN=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Required for receiving
+QSTASH_CURRENT_SIGNING_KEY=
+QSTASH_NEXT_SIGNING_KEY=
+```
 
-## Deploy on Vercel
+### 🏃‍♂️ Développement
+Pour lancer l'environnement de développement :
+```bash
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Cette commande démarre simultanément :
+* Le serveur Next.js sur https://localhost:3000
+* Le serveur de développement Convex
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### 🧪 Tests
+```bash
+# Exécuter Cypress en mode interactif
+npm run cypress
+
+# Exécuter les tests Cypress en mode headless
+npm run cy:run
+
+# Lancer l'application et exécuter les tests
+npm run test-cypress
+```
+### 🔍 Linting et formatage
+```bash
+npm run test
+```
+Cette commande exécute Prettier pour formater le code et ESLint pour détecter les problèmes potentiels.
+
+### 🚢 Déploiement
+Build pour la production
+```bash
+npm run build
+```
+Démarrer en mode production
+```bash
+npm run start
+```
+### 📚 Ressources supplémentaires
+* [Documentation Next.js](https://nextjs.org/docs)
+* [Convex dev](https://dashboard.convex.dev/t/anatholyb1)
+* [Documentation Convex](https://docs.convex.dev/home)
+* [Clerk dashboard](https://dashboard.clerk.com/apps/app_2twlAq4YXbvcquyksPXs3bO0Lx1/instances/ins_2twlApg4WSPif14n824LLfM0wtm)
+* [Documentation Clerk](https://clerk.com/docs)
+* [Shadcn doc](https://ui.shadcn.com/docs)
+
