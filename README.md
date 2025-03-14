@@ -13,6 +13,8 @@ Cette application intègre les technologies suivantes :
 - **[TailwindCSS](https://tailwindcss.com/)** - Framework CSS utilitaire
 - **[Next-themes](https://github.com/pacocoursey/next-themes)** - Gestion du thème clair/sombre
 - **[Cypress](https://www.cypress.io/)** - Tests end-to-end
+- **[Qstash](https://upstash.com/docs/introduction)** -Webhooks
+- **[Gsap](https://gsap.com/)** - Animation
 
 ## 🛠️ Installation
 
